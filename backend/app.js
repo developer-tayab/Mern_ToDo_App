@@ -2,16 +2,20 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const DB = require("./database/db")
+const todoRoutes = require("./routes/todoRouter")
+
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extends: true }));
 
 
+// {Routes}
+app.use("/api", todoRoutes);
+app.get("/", (req, res) => {
+  red.send("Home Page")
+})
 
-app.use("/", (req, res) => {
-  res.send("This is working!")
-});
 
 
 
