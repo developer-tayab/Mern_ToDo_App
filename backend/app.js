@@ -12,9 +12,8 @@ app.use(express.urlencoded({ extends: true }));
 
 // {Routes}
 app.use("/api", todoRoutes);
-app.get("/", (req, res) => {
-  red.send("Home Page")
-})
+
+
 
 
 
