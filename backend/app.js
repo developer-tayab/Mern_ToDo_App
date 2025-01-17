@@ -1,19 +1,19 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
+const cors = require('cors');
 const DB = require("./database/db")
 const todoRoutes = require("./routes/todoRouter")
 
 
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extends: true }));
 
 
 // {Routes}
 app.use("/api", todoRoutes);
-
-
 
 
 
